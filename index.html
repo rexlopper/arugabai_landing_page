@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ArugaBai | Your Intelligent Health Companion</title>
+    <meta name="description" content="ArugaBai gives Filipino families a smarter way to manage health with Bai, an AI companion, and ArugaVault, an organized record vault.">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <nav class="nav" id="nav">
+      <div class="nav-inner">
+        <a class="logo-link" href="#hero" aria-label="ArugaBai home">
+          <img src="assets/arugabai-logo.png" alt="ArugaBai" class="logo">
+        </a>
+
+        <div class="nav-links" id="navLinks">
+          <a href="#for-families" data-i18n="nav.forFamilies">For Families</a>
+          <a href="#for-patients" data-i18n="nav.forPatients">For Patients</a>
+          <a href="#for-doctors" data-i18n="nav.forDoctors">For Doctors</a>
+          <a href="#signup" data-i18n="nav.signUp">Sign Up</a>
+        </div>
+
+        <div class="nav-actions">
+          <button class="lang-toggle" id="langToggle" type="button" aria-label="Toggle language">
+            <span class="active" data-lang-pill="en">EN</span>
+            <span data-lang-pill="fil">FIL</span>
+          </button>
+          <a href="#signup" class="btn nav-cta" data-i18n="nav.joinWaitlist">Join the Waitlist</a>
+          <button class="menu-btn" id="menuBtn" type="button" aria-label="Open main menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="#for-families" data-i18n="nav.forFamilies">For Families</a>
+        <a href="#for-patients" data-i18n="nav.forPatients">For Patients</a>
+        <a href="#for-doctors" data-i18n="nav.forDoctors">For Doctors</a>
+        <a href="#signup" data-i18n="nav.signUp">Sign Up</a>
+        <a href="#signup" class="btn" data-i18n="nav.joinWaitlist">Join the Waitlist</a>
+      </div>
+    </nav>
+
+    <main>
+      <section class="hero section-dark" id="hero">
+        <div class="hero-glow hero-glow-one"></div>
+        <div class="hero-glow hero-glow-two"></div>
+        <div class="container hero-grid">
+          <div class="hero-copy reveal">
+            <div class="eyebrow">
+              <span class="pulse-dot"></span>
+              <span data-i18n="hero.badge">Your intelligent health companion</span>
+            </div>
+            <h1 data-i18n="hero.headline">Your health story, organized. Your companion, always ready.</h1>
+            <p class="hero-body" data-i18n="hero.body">ArugaBai gives Filipino families a smarter way to manage health with an AI companion named Bai who already knows your history, and a record vault that's ready for every consultation.</p>
+            <div class="hero-actions">
+              <a href="#signup" class="btn btn-large" data-i18n="hero.ctaPrimary">Join the Waitlist -></a>
+              <a href="#how-it-works" class="btn btn-large btn-ghost" data-i18n="hero.ctaSecondary">See How It Works</a>
+            </div>
+            <svg class="ecg" viewBox="0 0 400 60" aria-hidden="true" preserveAspectRatio="none">
+              <path d="M0 30 L60 30 L75 30 L85 10 L95 50 L105 15 L115 45 L125 30 L200 30 L215 30 L225 8 L235 52 L245 12 L255 48 L265 30 L340 30 L355 30 L365 18 L375 42 L385 30 L400 30"></path>
+            </svg>
+            <div class="stat-grid">
+              <div class="stat"><p data-i18n="hero.stat1">87% of patients repeat their history to every new doctor</p></div>
+              <div class="stat"><p data-i18n="hero.stat2">65% store records as phone camera photos</p></div>
+              <div class="stat"><p data-i18n="hero.stat3">Bai - available anytime, between every visit</p></div>
+            </div>
+          </div>
+
+          <div class="hero-chat reveal">
+            <div class="halo"></div>
+            <div class="bai-chat interactive-chat" data-chat="hero"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="trustbar">
+        <div class="container trust-inner">
+          <p data-i18n="trustBar.built">Built with insights from 23 Filipino families and healthcare professionals · AIM MIB 2025 Research</p>
+          <div class="trust-items">
+            <span><i data-icon="shield"></i><span data-i18n="trustBar.npc">NPC-compliant privacy</span></span>
+            <span><i data-icon="badge"></i><span data-i18n="trustBar.verified">Doctor-verified records</span></span>
+            <span><i data-icon="users"></i><span data-i18n="trustBar.familyControlled">Family-controlled access</span></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section white" id="for-families">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="label" data-i18n="families.label">For Families</p>
+            <h2 data-i18n="families.headline">Stop managing your parent's health from memory.</h2>
+            <p data-i18n="families.body">You've become the family health coordinator - fielding Viber messages from siblings, photographing every prescription, Googling every side effect. ArugaBai gives your family one organized system, so you can stop worrying and start knowing.</p>
+          </div>
+          <div class="card-grid">
+            <article class="feature-card reveal">
+              <i data-icon="heart"></i>
+              <h3 data-i18n="families.card1Title">One family record</h3>
+              <p data-i18n="families.card1Desc">ArugaVault stores every prescription, lab result, and doctor's note in one organized place. No more digging through camera rolls.</p>
+            </article>
+            <article class="feature-card reveal">
+              <i data-icon="share"></i>
+              <h3 data-i18n="families.card2Title">Share with anyone</h3>
+              <p data-i18n="families.card2Desc">Send your sibling to the consultation instead. Everything they need is already there - history, current meds, doctor's notes.</p>
+            </article>
+            <article class="feature-card reveal">
+              <i data-icon="globe"></i>
+              <h3 data-i18n="families.card3Title">Always in the loop</h3>
+              <p data-i18n="families.card3Desc">Even from abroad, you see every update, every new record, every change in Nanay's health. Real-time, organized, clear.</p>
+            </article>
+          </div>
+          <blockquote class="quote reveal">
+            <p data-i18n="families.quote">"I take photos of every prescription. I set the reminders. I Google every side effect. And still I feel like I'm not doing enough."</p>
+            <cite data-i18n="families.quoteAttr">- The Caring Child</cite>
+          </blockquote>
+          <a href="#signup" class="text-link" data-i18n="families.cta">Organize Your Family's Health</a>
+        </div>
+      </section>
+
+      <section class="section muted" id="for-patients">
+        <div class="container split">
+          <div class="reveal">
+            <p class="label gold" data-i18n="patients.label">For Patients</p>
+            <h2 data-i18n="patients.headline">Meet Bai - who already knows your health story.</h2>
+            <p class="lead" data-i18n="patients.body">No more arriving at consultations empty-handed. Bai prepares you before every appointment and helps you understand what your doctor said.</p>
+            <div class="benefit-list">
+              <div class="benefit"><i data-icon="calendar"></i><div><h3 data-i18n="patients.benefit1Title">Prepared before every appointment</h3><p data-i18n="patients.benefit1Desc">Bai builds your pre-visit summary so you arrive knowing what to discuss - your recent symptoms, current medications, and questions to ask.</p></div></div>
+              <div class="benefit"><i data-icon="file"></i><div><h3 data-i18n="patients.benefit2Title">Understand what your doctor said</h3><p data-i18n="patients.benefit2Desc">The consultation is transcribed, approved by your doctor, and explained in plain language. No more trying to remember everything.</p></div></div>
+              <div class="benefit"><i data-icon="lock"></i><div><h3 data-i18n="patients.benefit3Title">Your records are yours</h3><p data-i18n="patients.benefit3Desc">Nothing is stored without your approval. You decide who sees your records, when, and for how long.</p></div></div>
+            </div>
+            <blockquote class="quote compact">
+              <p data-i18n="patients.quote">"I keep an envelope of prescriptions. I try to remember. But every new doctor asks me to start from scratch - and I can never remember everything."</p>
+              <cite data-i18n="patients.quoteAttr">- The Patient</cite>
+            </blockquote>
+          </div>
+          <div class="sticky-chat reveal">
+            <div class="bai-chat scripted-chat"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section doctors" id="for-doctors">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="label aqua" data-i18n="doctors.label">For Hospital & Clinic Leaders</p>
+            <h2 data-i18n="doctors.headline">Your doctors will never have to write during a consultation again.</h2>
+            <p data-i18n="doctors.body">Built for fellows, consultants, and hospital directors who can deploy ArugaBai across their organization. Every consultation captured. Every record verified. Zero writing burden on the physician.</p>
+          </div>
+          <div class="process">
+            <div class="process-line"></div>
+            <article class="process-step reveal"><i data-icon="mic"></i><span>01</span><h3 data-i18n="doctors.step1Title">Patient records consultation</h3><p data-i18n="doctors.step1Desc">With doctor's consent, the session is recorded.</p></article>
+            <article class="process-step reveal"><i data-icon="file"></i><span>02</span><h3 data-i18n="doctors.step2Title">AI structures the note</h3><p data-i18n="doctors.step2Desc">Bai transcribes and formats the clinical record.</p></article>
+            <article class="process-step reveal"><i data-icon="check"></i><span>03</span><h3 data-i18n="doctors.step3Title">Doctor reviews & approves</h3><p data-i18n="doctors.step3Desc">The physician edits and confirms. Their name, their authority.</p></article>
+            <article class="process-step reveal"><i data-icon="archive"></i><span>04</span><h3 data-i18n="doctors.step4Title">Record stored in ArugaVault</h3><p data-i18n="doctors.step4Desc">Patient consents. Record saved. Accessible forever.</p></article>
+          </div>
+          <div class="panel-grid">
+            <article class="dark-panel reveal"><h3 data-i18n="doctors.forDoctorsTitle">For your doctors</h3><p data-i18n="doctors.forDoctorsBody">Less documentation. More presence. Your physicians stay in the consultation, not behind a keyboard.</p></article>
+            <article class="dark-panel reveal"><h3 data-i18n="doctors.forInstitutionTitle">For your institution</h3><p data-i18n="doctors.forInstitutionBody">Org-wide deployment. Every consultation captured, verified, and complete. A searchable clinical record system across your practice.</p></article>
+          </div>
+          <a href="#signup" class="btn btn-large" data-i18n="doctors.cta">Request a Demo -></a>
+        </div>
+      </section>
+
+      <section class="section white" id="how-it-works">
+        <div class="container centered">
+          <h2 class="reveal" data-i18n="howItWorks.headline">Three capabilities. One health story.</h2>
+          <div class="capability-grid">
+            <article class="capability reveal"><i data-icon="cpu"></i><h3 data-i18n="howItWorks.cap1Title">Bai</h3><p data-i18n="howItWorks.cap1Desc">Your companion who knows your complete health history. Ready before every appointment, available between every visit.</p></article>
+            <article class="capability reveal"><i data-icon="mic"></i><h3 data-i18n="howItWorks.cap2Title">Consultation Capture</h3><p data-i18n="howItWorks.cap2Desc">AI transcribes with the doctor's consent. Doctor reviews and approves. Record stored with patient consent.</p></article>
+            <article class="capability reveal"><i data-icon="database"></i><h3 data-i18n="howItWorks.cap3Title">ArugaVault</h3><p data-i18n="howItWorks.cap3Desc">Every record, organized and shareable. Prescriptions, labs, discharge summaries, referral letters - all in one vault.</p></article>
+          </div>
+          <blockquote class="quote big reveal"><p data-i18n="howItWorks.quote">"AI drafts the record. Your doctor confirms it. You approve it. Then it's yours."</p></blockquote>
+        </div>
+      </section>
+
+      <section class="section signup" id="signup">
+        <div class="container split">
+          <div class="reveal">
+            <h2 data-i18n="signup.headline">Be among the first Filipino families to access ArugaBai.</h2>
+            <p class="lead light" data-i18n="signup.body">We're building ArugaBai with early users. Join the waitlist and we'll reach out when we're ready for you.</p>
+            <div class="signup-trust">
+              <span><i data-icon="shield"></i><span data-i18n="signup.trust1">Secure & NPC-compliant</span></span>
+              <span><i data-icon="bell"></i><span data-i18n="signup.trust2">No spam - ever</span></span>
+              <span><i data-icon="heart"></i><span data-i18n="signup.trust3">Built for Filipino families</span></span>
+            </div>
+          </div>
+          <div class="form-card reveal">
+            <form id="waitlistForm" action="#" method="post">
+              <label for="name" data-i18n="signup.nameLabel">Full Name</label>
+              <input id="name" name="name" type="text" placeholder="Juan dela Cruz" required>
+              <label for="email" data-i18n="signup.emailLabel">Email Address</label>
+              <input id="email" name="email" type="email" placeholder="juan@example.com" required>
+              <label for="role" data-i18n="signup.roleLabel">I am a...</label>
+              <select id="role" name="role" required>
+                <option value="" disabled selected data-i18n="signup.rolePlaceholder">Select an option</option>
+                <option value="caregiver" data-i18n="signup.roleCaregiver">A family caregiver (managing a parent's health)</option>
+                <option value="patient" data-i18n="signup.rolePatient">A patient managing my own health</option>
+                <option value="doctor" data-i18n="signup.roleDoctor">A doctor or healthcare professional</option>
+                <option value="admin" data-i18n="signup.roleAdmin">A hospital or clinic administrator</option>
+                <option value="other" data-i18n="signup.roleOther">Other</option>
+              </select>
+              <button type="submit" class="btn btn-submit" data-i18n="signup.submit">Join the Waitlist -></button>
+            </form>
+            <p class="privacy" data-i18n="signup.privacy">We respect your privacy. No spam - only updates that matter. NPC-compliant.</p>
+            <p class="form-status" id="formStatus" role="status"></p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-top">
+          <div>
+            <img src="assets/arugabai-logo.png" alt="ArugaBai" class="logo">
+            <p data-i18n="footer.tagline">aruga - to deeply care for.  bai - a trusted friend.</p>
+          </div>
+          <nav>
+            <a href="#for-families" data-i18n="nav.forFamilies">For Families</a>
+            <a href="#for-patients" data-i18n="nav.forPatients">For Patients</a>
+            <a href="#for-doctors" data-i18n="nav.forDoctors">For Doctors</a>
+            <a href="#signup" data-i18n="footer.joinWaitlist">Join Waitlist</a>
+          </nav>
+        </div>
+        <div class="footer-bottom">
+          <p data-i18n="footer.copyright">© 2025 ArugaBai. All rights reserved.</p>
+          <p>arugabai.com</p>
+        </div>
+      </div>
+    </footer>
+
+    <button class="floating-bai" id="floatingBai" type="button" aria-label="Ask Bai">
+      <span class="pulse-dot white"></span>
+      <i data-icon="message"></i>
+      <span data-i18n="floating.label">Ask Bai</span>
+    </button>
+
+    <div class="chat-sheet" id="chatSheet" aria-hidden="true">
+      <button class="sheet-backdrop" id="sheetBackdrop" type="button" aria-label="Close chat"></button>
+      <div class="sheet-panel">
+        <div class="sheet-head">
+          <span class="sheet-handle"></span>
+          <span class="online"><span class="pulse-dot"></span><span data-i18n="bai.online">Bai is online</span></span>
+          <button class="close-btn" id="closeSheet" type="button" aria-label="Close">×</button>
+        </div>
+        <div class="sheet-body">
+          <div class="bai-chat interactive-chat" data-chat="sheet"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
