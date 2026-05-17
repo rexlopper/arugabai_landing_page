@@ -834,8 +834,8 @@ select {
 .process {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 38px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 26px;
   margin-bottom: 72px;
 }
 

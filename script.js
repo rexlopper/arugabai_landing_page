@@ -64,15 +64,21 @@ const translations = {
       headline:
         "Your doctors will never have to write during a consultation again.",
       body: "Built for fellows, consultants, and hospital directors who can deploy ArugaBai across their organization. Every consultation captured. Every record verified. Zero writing burden on the physician.",
-      step1Title: "Patient records consultation",
-      step1Desc: "With doctor's consent, the session is recorded.",
-      step2Title: "AI structures the note",
-      step2Desc: "Bai transcribes and formats the clinical record.",
-      step3Title: "Doctor reviews & approves",
+      step1Title: "ArugaVoice activates",
+      step1Desc:
+        "With the patient's explicit consent, ArugaVoice begins the session. The doctor starts the consultation. Bai starts listening.",
+      step2Title: "Bai structures the clinical record",
+      step2Desc:
+        "Bai transcribes the consultation in real time and formats it as a SOAP note - Subjective, Objective, Assessment, Plan. A structured clinical record, ready for review before the patient leaves.",
+      step3Title: "Doctor checks ArugaVault",
       step3Desc:
-        "The physician edits and confirms. Their name, their authority.",
-      step4Title: "Record stored in ArugaVault",
-      step4Desc: "Patient consents. Record saved. Accessible forever.",
+        "Before or during the consultation, the doctor pulls up the patient's complete record - labs, prescriptions, discharge summaries, and referrals from other hospitals and clinics. The full picture, in one place.",
+      step4Title: "Doctor reviews, edits, and approves",
+      step4Desc:
+        "The physician reads the AI-generated SOAP note, corrects anything that needs correcting, and adds prescription orders and diagnostic requests. Their name. Their authority. Their record.",
+      step5Title: "Record saved. Patient consents.",
+      step5Desc:
+        "The approved record is sent to the patient for final consent before it is stored in ArugaVault. Secured. Accessible at the next consultation - at any hospital or clinic they visit.",
       forDoctorsTitle: "For your doctors",
       forDoctorsBody:
         "Less documentation. More presence. Your physicians stay in the consultation, not behind a keyboard.",
@@ -206,16 +212,21 @@ const translations = {
       headline:
         "Ang inyong mga doktor ay hindi na kailangang sumusulat habang kumukonsulta.",
       body: "Itinayo para sa mga fellow, consultant, at hospital director na maaaring mag-deploy ng ArugaBai sa buong organisasyon. Bawat konsultasyon nakuha. Bawat rekord na-verify. Zero na pasanin sa pagsulat para sa physician.",
-      step1Title: "Nire-record ng pasyente ang konsultasyon",
-      step1Desc: "Sa pahintulot ng doktor, nire-record ang session.",
-      step2Title: "Inayos ng AI ang tala",
-      step2Desc: "Nita-transcribe at nipo-format ni Bai ang clinical record.",
-      step3Title: "Sinusuri at ina-approve ng doktor",
+      step1Title: "Nag-aactivate ang ArugaVoice",
+      step1Desc:
+        "Kapag pumayag ang pasyente, sisimulan na ng ArugaVoice ang session. Mag-uumpisa na ang konsultasyon. Makikinig na si Bai.",
+      step2Title: "Inaayos ni Bai ang clinical record",
+      step2Desc:
+        "Tina-transcribe ni Bai ang usapan habang ongoing ang konsultasyon at inaayos ito bilang SOAP note - Subjective, Objective, Assessment, Plan. Isang maayos at structured na clinical record bago pa umalis ang pasyente.",
+      step3Title: "Binubuksan ng doktor ang ArugaVault",
       step3Desc:
-        "Ine-edit at kinukumpirma ng physician. Ang kanilang pangalan, ang kanilang awtoridad.",
-      step4Title: "Rekord na nakaimbak sa ArugaVault",
+        "Bago o habang nagko-consult, makikita ng doktor ang buong medical record ng pasyente - labs, reseta, discharge summaries, at referrals mula sa ibang ospital o clinic. Kumpletong impormasyon, nasa isang lugar lang.",
+      step4Title: "Nirereview at ina-approve ng doktor",
       step4Desc:
-        "Pumapayag ang pasyente. Nai-save ang rekord. Accessible magpakailanman.",
+        "Babasahin ng doktor ang AI-generated SOAP note, aayusin kung may kailangang baguhin, at magdadagdag ng prescriptions o diagnostic requests. Pangalan niya. Desisyon niya. Record niya.",
+      step5Title: "Saved na ang record",
+      step5Desc:
+        "Kapag approved na, ipapakita muna ito sa pasyente para sa final consent bago ma-save sa ArugaVault. Secure, madaling ma-access, at ready gamitin sa susunod na konsultasyon sa kahit anong ospital o clinic.",
       forDoctorsTitle: "Para sa inyong mga doktor",
       forDoctorsBody:
         "Mas kaunting dokumentasyon. Mas maraming presensya. Nananatili ang inyong mga physician sa konsultasyon, hindi sa likod ng keyboard.",
@@ -236,7 +247,7 @@ const translations = {
       cap3Desc:
         "Bawat rekord, organisado at maaaring ibahagi. Mga reseta, lab, discharge summaries, referral letters - lahat sa isang vault.",
       quote:
-        '"Ni-draft ng AI ang rekord. Kinukumpirma ng iyong doktor. Ina-approve mo. Pagkatapos, sa iyo na ito."',
+        '"AI ang gumagawa ng draft ng rekord. Kinukumpirma ng doktor mo. Inaaprubahan mo. Pagkatapos, sa\'yo na ito."',
     },
     signup: {
       headline:
