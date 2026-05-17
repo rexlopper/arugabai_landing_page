@@ -617,7 +617,7 @@ function sendInteractive(chat, text) {
       state.exchanges += 1;
       if (state.exchanges >= 2 && !chat.querySelector(".chat-nudge")) {
         const nudge = document.createElement("a");
-        nudge.href = "#signup";
+        nudge.href = "signup";
         nudge.className = "chat-nudge";
         nudge.textContent = t("bai.ctaNudge");
         nudge.style.cssText =
@@ -759,6 +759,54 @@ function setupSheet() {
   });
 }
 
+function setupCleanSectionLinks() {
+  const sectionRoutes = {
+    "/": "hero",
+    "/for-families": "for-families",
+    "/for-patients": "for-patients",
+    "/for-doctors": "for-doctors",
+    "/how-it-works": "how-it-works",
+    "/signup": "signup",
+  };
+
+  function scrollToRoute(pathname, replace = false) {
+    const targetId = sectionRoutes[pathname];
+    if (!targetId) return false;
+
+    const target = document.getElementById(targetId);
+    if (!target) return false;
+
+    if (replace) {
+      history.replaceState({ targetId }, "", pathname);
+    } else {
+      history.pushState({ targetId }, "", pathname);
+    }
+
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+    return true;
+  }
+
+  document.querySelectorAll("a[href]").forEach((link) => {
+    const url = new URL(link.getAttribute("href"), window.location.origin);
+    if (url.origin !== window.location.origin || !sectionRoutes[url.pathname]) {
+      return;
+    }
+
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      scrollToRoute(url.pathname);
+    });
+  });
+
+  window.addEventListener("popstate", () => {
+    scrollToRoute(window.location.pathname, true);
+  });
+
+  if (window.location.pathname !== "/") {
+    scrollToRoute(window.location.pathname, true);
+  }
+}
+
 function setupForm() {
   const form = document.getElementById("waitlistForm");
   const status = document.getElementById("formStatus");
@@ -778,6 +826,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupLanguage();
   setupReveal();
   setupSheet();
+  setupCleanSectionLinks();
   setupForm();
   applyTranslations();
   initScriptedChat();
