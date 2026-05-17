@@ -322,7 +322,7 @@ select {
   stroke-linejoin: round;
   stroke-dasharray: 740;
   stroke-dashoffset: 740;
-  animation: draw 2.5s ease-in-out forwards 400ms;
+  animation: draw 3.2s ease-in-out infinite;
 }
 
 .stat-grid {
@@ -1175,7 +1175,10 @@ select {
 }
 
 @keyframes draw {
-  to { stroke-dashoffset: 0; }
+  0% { stroke-dashoffset: 740; opacity: 0.16; }
+  18% { opacity: 0.32; }
+  72% { stroke-dashoffset: 0; opacity: 0.32; }
+  100% { stroke-dashoffset: -740; opacity: 0.16; }
 }
 
 @keyframes breathe {
