@@ -85,7 +85,7 @@ const translations = {
       forInstitutionTitle: "For your institution",
       forInstitutionBody:
         "Org-wide deployment. Every consultation captured, verified, and complete. A searchable clinical record system across your practice.",
-      cta: "Request a Demo ->",
+      cta: "Request a Demo",
     },
     howItWorks: {
       headline: "Three capabilities. One health story.",
@@ -243,7 +243,7 @@ const translations = {
       forInstitutionTitle: "Para sa inyong institusyon",
       forInstitutionBody:
         "Org-wide na deployment. Bawat konsultasyon nakuha, na-verify, at kumpleto. Isang searchable na clinical record system sa buong inyong practice.",
-      cta: "Humiling ng Demo ->",
+      cta: "Humiling ng Demo",
     },
     howItWorks: {
       headline: "Tatlong kakayahan. Isang kwentong pangkalusugan.",
@@ -847,12 +847,11 @@ function setupForm() {
   const form = document.getElementById("waitlistForm");
   const status = document.getElementById("formStatus");
   form.addEventListener("submit", (event) => {
-    event.preventDefault();
     status.textContent =
       currentLang === "fil"
-        ? "Salamat! Static demo ito - ikabit ang form endpoint bago i-live."
-        : "Thanks! This static demo is ready - connect a form endpoint before going live.";
-    form.reset();
+        ? "Salamat! Naipadala na ang iyong waitlist form."
+        : "Thanks! Your waitlist form has been submitted.";
+    setTimeout(() => form.reset(), 500);
   });
 }
 

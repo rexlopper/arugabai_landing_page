@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=5">
   </head>
   <body>
     <nav class="nav" id="nav">
@@ -164,7 +164,7 @@
             <article class="dark-panel reveal"><h3 data-i18n="doctors.forDoctorsTitle">For your doctors</h3><p data-i18n="doctors.forDoctorsBody">Less documentation. More presence. Your physicians stay in the consultation, not behind a keyboard.</p></article>
             <article class="dark-panel reveal"><h3 data-i18n="doctors.forInstitutionTitle">For your institution</h3><p data-i18n="doctors.forInstitutionBody">Org-wide deployment. Every consultation captured, verified, and complete. A searchable clinical record system across your practice.</p></article>
           </div>
-          <a href="signup" class="btn btn-large" data-i18n="doctors.cta">Request a Demo -></a>
+          <a href="signup" class="btn btn-large" data-i18n="doctors.cta">Request a Demo</a>
         </div>
       </section>
 
@@ -192,19 +192,20 @@
             </div>
           </div>
           <div class="form-card reveal">
-            <form id="waitlistForm" action="#" method="post">
+            <iframe name="googleFormTarget" class="hidden-frame" title="Google Form submission"></iframe>
+            <form id="waitlistForm" action="https://docs.google.com/forms/d/e/1FAIpQLSe_Z9v79BmgjQc_ef1Qd0JiYvpuzZYUtkBrwIb9mWICD9XA0Q/formResponse" method="post" target="googleFormTarget">
               <label for="name" data-i18n="signup.nameLabel">Full Name</label>
-              <input id="name" name="name" type="text" placeholder="Juan dela Cruz" required>
+              <input id="name" name="entry.1418860797" type="text" placeholder="Juan dela Cruz" required>
               <label for="email" data-i18n="signup.emailLabel">Email Address</label>
-              <input id="email" name="email" type="email" placeholder="juan@example.com" required>
+              <input id="email" name="entry.362359946" type="email" placeholder="juan@example.com" required>
               <label for="role" data-i18n="signup.roleLabel">I am a...</label>
-              <select id="role" name="role" required>
+              <select id="role" name="entry.283710264" required>
                 <option value="" disabled selected data-i18n="signup.rolePlaceholder">Select an option</option>
-                <option value="caregiver" data-i18n="signup.roleCaregiver">A family caregiver (managing a parent's health)</option>
-                <option value="patient" data-i18n="signup.rolePatient">A patient managing my own health</option>
-                <option value="doctor" data-i18n="signup.roleDoctor">A doctor or healthcare professional</option>
-                <option value="admin" data-i18n="signup.roleAdmin">A hospital or clinic administrator</option>
-                <option value="other" data-i18n="signup.roleOther">Other</option>
+                <option value="A family caregiver (managing a parent's health)" data-i18n="signup.roleCaregiver">A family caregiver (managing a parent's health)</option>
+                <option value="A patient managing my own health" data-i18n="signup.rolePatient">A patient managing my own health</option>
+                <option value="A doctor or healthcare professional" data-i18n="signup.roleDoctor">A doctor or healthcare professional</option>
+                <option value="A hospital or clinic administrator" data-i18n="signup.roleAdmin">A hospital or clinic administrator</option>
+                <option value="Other" data-i18n="signup.roleOther">Other</option>
               </select>
               <button type="submit" class="btn btn-submit" data-i18n="signup.submit">Join the Waitlist</button>
             </form>
@@ -256,6 +257,6 @@
       </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=5"></script>
   </body>
 </html>

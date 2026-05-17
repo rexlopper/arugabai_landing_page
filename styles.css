@@ -982,6 +982,10 @@ select {
   gap: 12px;
 }
 
+.hidden-frame {
+  display: none;
+}
+
 .form-card label {
   color: var(--ink-2);
   font-size: 14px;
