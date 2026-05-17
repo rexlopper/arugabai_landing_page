@@ -86,7 +86,7 @@ const translations = {
       cap1Title: "Bai",
       cap1Desc:
         "Your companion who knows your complete health history. Ready before every appointment, available between every visit.",
-      cap2Title: "Consultation Capture",
+      cap2Title: "ArugaVoice",
       cap2Desc:
         "AI transcribes with the doctor's consent. Doctor reviews and approves. Record stored with patient consent.",
       cap3Title: "ArugaVault",
@@ -229,7 +229,7 @@ const translations = {
       cap1Title: "Bai",
       cap1Desc:
         "Ang iyong kasamahan na nakaalam ng iyong kumpletong kasaysayan ng kalusugan. Handa bago ang bawat appointment, available sa pagitan ng bawat pagbisita.",
-      cap2Title: "Consultation Capture",
+      cap2Title: "ArugaVoice",
       cap2Desc:
         "Nita-transcribe ng AI sa pahintulot ng doktor. Sinusuri at ina-approve ng doktor. Nai-save ang rekord sa pahintulot ng pasyente.",
       cap3Title: "ArugaVault",
