@@ -11,7 +11,7 @@ const translations = {
       badge: "Your intelligent health companion",
       headline: "Your health story, organized. Your companion, always ready.",
       body: "ArugaBai gives Filipino families a smarter way to manage health - with an AI companion named Bai who already knows your history, and a record vault that's ready for every consultation.",
-      ctaPrimary: "Join the Waitlist ->",
+      ctaPrimary: "Join the Waitlist",
       ctaSecondary: "See How It Works",
       stat1: "87% of patients repeat their history to every new doctor",
       stat2: "65% store records as phone camera photos",
@@ -116,7 +116,7 @@ const translations = {
       roleDoctor: "A doctor or healthcare professional",
       roleAdmin: "A hospital or clinic administrator",
       roleOther: "Other",
-      submit: "Join the Waitlist ->",
+      submit: "Join the Waitlist",
       privacy:
         "We respect your privacy. No spam - only updates that matter. NPC-compliant.",
     },
@@ -134,10 +134,20 @@ const translations = {
       suggested4: "How does consultation capture work?",
       inputPlaceholder: "Ask Bai a question...",
       disclaimer: "Demo responses - join the waitlist for the real Bai",
-      ctaNudge: "Ready for the real Bai? Join the waitlist ->",
+      ctaNudge: "Ready for the real Bai? Join the waitlist",
       online: "Bai is online",
       fallback:
         "That's a great question - and exactly the kind of thing I'm designed to help with. Once you join ArugaBai, I'll have your full health context to give you a real answer. Join the waitlist below to be first in line.",
+      scriptedGreeting:
+        "Good morning, Lola Cora! Your appointment with Dr. Reyes is tomorrow at 10am. I've prepared a summary of your last 3 visits.",
+      scriptedSummaryTitle: "Pre-Visit Summary",
+      scriptedAvgBp: "Avg BP (2 weeks)",
+      scriptedCurrentMeds: "Current meds",
+      scriptedLastVisit: "Last visit",
+      scriptedLastVisitValue: "3 weeks ago",
+      scriptedQuestion: "What should I ask about my blood pressure?",
+      scriptedResponse:
+        "Your BP has been averaging 142/88 the past 2 weeks - higher than your target. I'd suggest asking Dr. Reyes about adjusting your Amlodipine dosage.",
     },
     floating: {
       label: "Ask Bai",
@@ -156,7 +166,7 @@ const translations = {
       headline:
         "Ang iyong kwentong pangkalusugan, naayos na. Ang iyong kasamahan, laging handa.",
       body: "Binibigyan ng ArugaBai ang mga pamilyang Pilipino ng mas matalinong paraan para pamahalaan ang kalusugan - may AI companion na si Bai na nakaalam na ng iyong kasaysayan, at isang vault ng rekord na handa sa bawat konsultasyon.",
-      ctaPrimary: "Sumali sa Waitlist ->",
+      ctaPrimary: "Sumali sa Waitlist",
       ctaSecondary: "Tingnan Kung Paano",
       stat1:
         "87% ng mga pasyente ang inuulit ang kasaysayan sa bawat bagong doktor",
@@ -266,7 +276,7 @@ const translations = {
       roleDoctor: "Isang doktor o healthcare professional",
       roleAdmin: "Isang hospital o clinic administrator",
       roleOther: "Iba pa",
-      submit: "Sumali sa Waitlist ->",
+      submit: "Sumali sa Waitlist",
       privacy:
         "Iginagalang namin ang inyong privacy. Walang spam - mga update lang na mahalaga. Sumusunod sa NPC.",
     },
@@ -285,10 +295,20 @@ const translations = {
       suggested4: "Paano gumagana ang consultation capture?",
       inputPlaceholder: "Magtanong kay Bai...",
       disclaimer: "Mga demo na sagot - sumali sa waitlist para sa tunay na Bai",
-      ctaNudge: "Handa na para sa tunay na Bai? Sumali sa waitlist ->",
+      ctaNudge: "Handa na para sa tunay na Bai? Sumali sa waitlist",
       online: "Si Bai ay online",
       fallback:
         "Magandang tanong - at eksaktong uri ng bagay na dinisenyo ako para tulungan. Sa oras na sumali ka sa ArugaBai, magbibigay ako ng tunay na sagot batay sa iyong kalusugan. Sumali sa waitlist sa ibaba.",
+      scriptedGreeting:
+        "Magandang umaga, Lola Cora! May appointment ka kay Dr. Reyes bukas ng 10am. Inihanda ko na ang summary ng huling 3 bisita mo.",
+      scriptedSummaryTitle: "Pre-Visit Summary",
+      scriptedAvgBp: "Average BP (2 linggo)",
+      scriptedCurrentMeds: "Kasalukuyang gamot",
+      scriptedLastVisit: "Huling bisita",
+      scriptedLastVisitValue: "3 linggo na ang nakalipas",
+      scriptedQuestion: "Ano ang dapat kong itanong tungkol sa blood pressure ko?",
+      scriptedResponse:
+        "Ang average BP mo nitong nakaraang 2 linggo ay 142/88 - mas mataas kaysa sa target mo. Iminumungkahi kong itanong kay Dr. Reyes kung dapat baguhin ang dosage ng Amlodipine mo.",
     },
     floating: {
       label: "Tanungin si Bai",
@@ -480,6 +500,7 @@ const responseEntries = [
 let currentLang = localStorage.getItem("arugabai-lang") || "en";
 let messageId = 0;
 const chatInstances = [];
+let scriptedChatTimers = [];
 
 function t(path) {
   return (
@@ -501,6 +522,7 @@ function applyTranslations() {
   document.querySelectorAll(".interactive-chat").forEach((chat) => {
     resetInteractiveChat(chat);
   });
+  initScriptedChat();
 }
 
 function hydrateIcons() {
@@ -637,15 +659,14 @@ function sendInteractive(chat, text) {
 function initScriptedChat() {
   const chat = document.querySelector(".scripted-chat");
   if (!chat) return;
-  let timers = [];
 
   function run() {
-    timers.forEach(clearTimeout);
-    timers = [];
+    scriptedChatTimers.forEach(clearTimeout);
+    scriptedChatTimers = [];
     chat.innerHTML = chatShell();
     const box = chat.querySelector(".chat-messages");
     const add = (delay, maker) =>
-      timers.push(
+      scriptedChatTimers.push(
         setTimeout(() => {
           maker(box);
           scrollMessages(box);
@@ -656,20 +677,35 @@ function initScriptedChat() {
       target.appendChild(
         messageHtml(
           "bai",
-          "Good morning, Lola Cora! Your appointment with Dr. Reyes is tomorrow at 10am. I've prepared a summary of your last 3 visits.",
+          t("bai.scriptedGreeting"),
         ),
       ),
     );
     add(2600, (target) => {
       const card = document.createElement("div");
       card.className = "summary-card";
-      card.innerHTML =
-        '<strong>Pre-Visit Summary</strong><div><span>Avg BP (2 weeks)</span><b class="alert">142 / 88</b></div><div><span>Current meds</span><b>Amlodipine 5mg</b></div><div><span>Last visit</span><b>3 weeks ago</b></div>';
+      const title = document.createElement("strong");
+      title.textContent = t("bai.scriptedSummaryTitle");
+      card.appendChild(title);
+      [
+        [t("bai.scriptedAvgBp"), "142 / 88", "alert"],
+        [t("bai.scriptedCurrentMeds"), "Amlodipine 5mg", ""],
+        [t("bai.scriptedLastVisit"), t("bai.scriptedLastVisitValue"), ""],
+      ].forEach(([label, value, className]) => {
+        const row = document.createElement("div");
+        const labelEl = document.createElement("span");
+        const valueEl = document.createElement("b");
+        labelEl.textContent = label;
+        valueEl.textContent = value;
+        if (className) valueEl.className = className;
+        row.append(labelEl, valueEl);
+        card.appendChild(row);
+      });
       target.appendChild(card);
     });
     add(4600, (target) =>
       target.appendChild(
-        messageHtml("user", "What should I ask about my blood pressure?"),
+        messageHtml("user", t("bai.scriptedQuestion")),
       ),
     );
     add(5700, (target) => target.appendChild(typingEl()));
@@ -679,11 +715,11 @@ function initScriptedChat() {
       target.appendChild(
         messageHtml(
           "bai",
-          "Your BP has been averaging 142/88 the past 2 weeks - higher than your target. I'd suggest asking Dr. Reyes about adjusting your Amlodipine dosage.",
+          t("bai.scriptedResponse"),
         ),
       );
     });
-    timers.push(setTimeout(run, 11000));
+    scriptedChatTimers.push(setTimeout(run, 11000));
   }
 
   run();
@@ -829,5 +865,4 @@ document.addEventListener("DOMContentLoaded", () => {
   setupCleanSectionLinks();
   setupForm();
   applyTranslations();
-  initScriptedChat();
 });
