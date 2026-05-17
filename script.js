@@ -122,7 +122,7 @@ const translations = {
     },
     footer: {
       tagline: "aruga - to deeply care for.  bai - a trusted friend.",
-      copyright: "(c) 2025 ArugaBai. All rights reserved.",
+      copyright: "(c) 2026 ArugaBai. All rights reserved.",
       joinWaitlist: "Join Waitlist",
     },
     bai: {
@@ -283,7 +283,7 @@ const translations = {
     footer: {
       tagline:
         "aruga - malalim na pag-aalaga.  bai - isang pinagkakatiwalaang kaibigan.",
-      copyright: "(c) 2025 ArugaBai. Lahat ng karapatan ay nakalaan.",
+      copyright: "(c) 2026 ArugaBai. Lahat ng karapatan ay nakalaan.",
       joinWaitlist: "Sumali sa Waitlist",
     },
     bai: {
