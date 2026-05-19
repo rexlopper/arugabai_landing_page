@@ -7,7 +7,7 @@
   --primary: #1e8c75;
   --primary-2: #3faa8d;
   --aqua: #6fd1c2;
-  --gold: #e8960f;
+  --gold: #3faa8d;
   --blue: #1a4a6e;
   --dark: #042e24;
   --darker: #031f19;
@@ -611,7 +611,7 @@ select {
 .trust-items {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 24px;
 }
 

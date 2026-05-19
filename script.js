@@ -17,13 +17,6 @@ const translations = {
       stat2: "65% store records as phone camera photos",
       stat3: "Bai - available anytime, between every visit",
     },
-    trustBar: {
-      built:
-        "Built with insights from 23 Filipino families and healthcare professionals",
-      npc: "NPC-compliant privacy",
-      verified: "Doctor-verified records",
-      familyControlled: "Family-controlled access",
-    },
     families: {
       label: "For Families",
       headline: "Stop managing your parent's health from memory.",
@@ -172,13 +165,6 @@ const translations = {
         "87% ng mga pasyente ang inuulit ang kasaysayan sa bawat bagong doktor",
       stat2: "65% ang nag-iimbak ng rekord bilang mga larawan sa telepono",
       stat3: "Si Bai - laging handa, sa pagitan ng bawat pagbisita",
-    },
-    trustBar: {
-      built:
-        "Itinayo gamit ang mga kaalaman mula sa 23 pamilyang Pilipino at mga propesyonal sa kalusugan",
-      npc: "Sumusunod sa NPC",
-      verified: "Bine-verify ng Doktor",
-      familyControlled: "Kontrolado ng Pamilya",
     },
     families: {
       label: "Para sa Pamilya",
